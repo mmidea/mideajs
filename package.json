@@ -1,0 +1,19 @@
+{
+  "name": "mideajs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "chai": "^6.2.0",
+    "mocha": "^11.7.4"
+  }
+}
