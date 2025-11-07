@@ -2,7 +2,7 @@ class Textbox {
   _elements;
         constructor(selector,regEx) {
      this.value;
-     this._elements = document.querySelectorAll(selector) ;
+     this.selector = selector ;
      
      this._invalidSymbols = regEx;
 
@@ -16,9 +16,10 @@ class Textbox {
     }
 
     isValid(){
-      let elementsArr =  Array.from(this._elements);
+      let selected = document.querySelectorAll(this.selector);
+      let elementsArr =  Array.from(selected);
       elementsArr.array.forEach(element => {
-        let textContent = element.textContent;
+        let textContent = element.value;
         if(textContent.test(this._invalidSymbols)){
             return false;
         }
