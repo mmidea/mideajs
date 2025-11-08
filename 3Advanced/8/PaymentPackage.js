@@ -34,7 +34,7 @@ class PaymentPackage {
 }
 
 let sth =  new PaymentPackage('HR Services', 1500);
-console.log(sth.toString);
+console.log(sth.toString());
 
 
 export {PaymentPackage};
