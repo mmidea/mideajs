@@ -27,14 +27,18 @@ class PaymentPackage {
              this._VAT = newValue; } get active() { return this._active; } 
              set active(newValue) { if (typeof newValue !== 'boolean') 
                 { throw new Error('Active status must be a boolean'); } this._active = newValue; } 
-                toString() {
+
+
+        toString() {
         const output = [`Package: ${this.name}` + (this.active === false ? ' (inactive)' : ''),
         `- Value (excl. VAT): ${this.value}`, `- Value (VAT ${this.VAT}%): ${this.value * (1 + this.VAT / 100)}`]; return output.join('\n');
     }
 }
 
-let sth =  new PaymentPackage('HR Services', 1500);
+let sth =  new PaymentPackage('Consultation', 800);
 console.log(sth.toString());
+console.log("Package: Consultation\n- Value (excl. VAT): 800\n- Value (VAT 20%): 960\n");
 
+console.log(sth.toString() === "Package: Consultation\n- Value (excl. VAT): 800\n- Value (VAT 20%): 960");
 
 export {PaymentPackage};
