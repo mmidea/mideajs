@@ -31,11 +31,18 @@ class PaymentPackage {
 
         toString() {
         const output = [`Package: ${this.name}` + (this.active === false ? ' (inactive)' : ''),
-        `- Value (excl. VAT): ${this.value}`, `- Value (VAT ${this.VAT}%): ${this.value * (1 + this.VAT / 100)}`]; return output.join('\n');
+        `- Value (excl. VAT): ${this.value}`,
+         `- Value (VAT ${this.VAT}%): ${this.value * (1 + this.VAT / 100)}`]; return output.join('\n');
     }
 }
 
 let sth =  new PaymentPackage('Consultation', 800);
+sth.VAT = 90;
+console.log(sth.toString());
+
+
+
+
 console.log(sth.toString());
 console.log("Package: Consultation\n- Value (excl. VAT): 800\n- Value (VAT 20%): 960\n");
 
