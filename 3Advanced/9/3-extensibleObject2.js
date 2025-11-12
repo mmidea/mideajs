@@ -1,0 +1,38 @@
+function extensibleObject(){
+    let parent = {};
+    let childObj = Object.create(parent);
+
+    childObj.extend = function(obj){
+let objAsArray = Object.entries(obj);
+for(let[key, value] of objAsArray){
+    if(typeof(value)==="function"){
+        parent[key] = value;
+    }else{
+        childObj[key] = value;
+    }
+}
+
+    }
+    return childObj;
+}
+
+const myObj = extensibleObject();
+// myObj: { __proto__: {} extend: function () {…} }
+
+const template = {
+
+extensionMethod: function () {
+    console.log("Hello");
+    
+},
+
+extensionProperty: 'someString'
+
+}
+
+myObj.extend(template); 
+console.log(myObj);
+console.log(Object.getPrototypeOf(myObj));
+
+let otherObj = {};
+console.log(Object.getPrototypeOf(otherObj));
