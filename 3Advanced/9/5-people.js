@@ -7,7 +7,7 @@ function solution(){
             this.salary = 0;
             this.tasks = [];
             //this.bonuses = 0;
-            this.allEarned = 0;
+            //this.allEarned = 0;
         }
 
         work(){
@@ -17,17 +17,21 @@ function solution(){
         }
 
         collectSalary(){
+            
+            let all = Number(this.salary) + (this.dividend == undefined ? 0 : Number(this.dividend));
             debugger
-    console.log(`${this.name} received ${this.allEarned} this month.`);
-    
+    console.log(`${this.name} received ${all} this month.`);
+              
         }
     }
 
     class Junior extends Employee{
         constructor(name, age) {
             super(name, age);
-            debugger
+            //this.allEarned = this.salary + this.bonuses
+            //debugger
             this.tasks = [`${this.name} is working on a simple task.`]
+            //debugger
 
         }
     }
@@ -43,10 +47,11 @@ function solution(){
 
     class Manager extends Employee{
         constructor(name, age) {
+            //debugger;
             super(name, age);
             this.dividend = 0;
             
-           this.allEarned = this.dividend + this.salary;
+           //this.allEarned = this.dividend + this.salary;
             this.tasks = [`${this.name} scheduled a meeting.`,
                           `${this.name} is preparing a quarterly report.` ]
         }
