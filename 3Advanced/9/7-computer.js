@@ -1,28 +1,24 @@
 function solve(){
-class Peripherals {
-    constructor(manufacturer) {
-     this.manufacturer = manufacturer;  
-    }
-}
 
-class Keyboard extends Peripherals {
+
+class Keyboard  {
     constructor(manufacturer, responseTim) {
-      super(manufacturer);
+      this.manufacturer= manufacturer;
       this.responseTim = responseTim;
     }
 }
 
-class Monitor extends Peripherals{
+class Monitor {
     constructor(manufacturer, width, height) {
-       super(manufacturer);
+       this.manufacturer= manufacturer;
        this.width = width;
        this.height = height; 
     }
 }
 
-class Battery extends Peripherals{
+class Battery {
     constructor(manufacturer, expectedLife) {
-       super(manufacturer);
+       this.manufacturer= manufacturer;
        this.expectedLife = expectedLife; 
     }
 }
@@ -46,6 +42,26 @@ class Laptop extends Computer {
         this.battery = battery;
     }
 
+    set weight(number){
+        if( typeof(number) == "number"){
+            this._weight = number
+        }
+    }
+    get weight(){
+        return this._weight;
+    }
+
+      set color(str){
+        if( typeof(str) == "string"){
+            this._color = str;
+        }
+    }
+    get color(){
+        return this._color;
+    }
+
+
+
     get battery(){
         return this._battery;
     }
@@ -68,6 +84,7 @@ class Desktop extends Computer {
         return this._keyboard;
     }
     set keyboard(obj){
+        debugger
         if( obj instanceof Keyboard){
             this._keyboard = obj
         }else {
@@ -106,17 +123,23 @@ let Laptop = classes.Laptop;
 
 let Desktop = classes.Desktop;
 
-let Monitor = classes.Monitor;
+let myMonitor = classes.Monitor;
+let mimiMonitor = new myMonitor(1,2,3);
 
 let Battery = classes.Battery;
 
-let Keyboard = classes.Keyboard;
+let myKeyboard = classes.Keyboard;
+let mimiKeyboard = new myKeyboard(1,2);
+debugger
 
 let battery = new Battery('Energy', 3);
 
-console.log(battery);
+//console.log(battery);
 
 let laptop = new Laptop("Hewlett Packard", 2.4, 4, 0.5, 3.12, "Silver", battery)
 
 ; 
-console.log(laptop);
+//console.log(laptop);
+let nastolen = new Desktop(1,2,3,4,mimiKeyboard, mimiMonitor);
+//(manufacturer, processorSpeed, ram, hardDiskSpace, keyboard, monitor)
+console.log(nastolen);
