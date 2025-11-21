@@ -1,4 +1,4 @@
-window.addEventListener('load', solve);
+document.addEventListener('load', solve);
 function solve(){
 class Contact {
     constructor(fName, lName, tel, email) {

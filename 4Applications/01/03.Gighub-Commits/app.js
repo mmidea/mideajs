@@ -13,6 +13,8 @@ fetch(url)
 } 
 
 function onHeaders(response){
+    console.log(response);
+    
     if(!response.ok){ throw "Error"}
     return response.json();
 }

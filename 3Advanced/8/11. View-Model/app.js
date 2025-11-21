@@ -1,4 +1,6 @@
+(() => document.addEventListener("load", solve()))()
 (function solve(){
+  
 class Textbox {
   _elements;
         constructor(selector,regEx) {
